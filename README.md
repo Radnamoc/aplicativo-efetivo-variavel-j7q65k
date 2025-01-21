@@ -1,0 +1,1 @@
+# aplicativo-efetivo-variavel-j7q65k
