@@ -100,7 +100,7 @@ class _SuccessPageWidgetState extends State<SuccessPageWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed(
+                    context.goNamed(
                       'PaginaInicial1',
                       extra: <String, dynamic>{
                         kTransitionInfoKey: TransitionInfo(

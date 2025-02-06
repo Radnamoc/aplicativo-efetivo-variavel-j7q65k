@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/flutter_flow_youtube_player.dart';
 import 'dart:math';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -81,139 +81,123 @@ class _CancaodaCavalariaWidgetState extends State<CancaodaCavalariaWidget>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-        FocusManager.instance.primaryFocus?.unfocus();
-      },
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).primaryBackground,
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/brook-anderson-gTQbZXL417Q-unsplash.jpg',
-              ).image,
-            ),
-          ),
-          child: Align(
-            alignment: AlignmentDirectional(-1.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 44.0, 16.0, 0.0),
-                  child: Row(
+    return YoutubeFullScreenWrapper(
+      child: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          body: Stack(
+            children: [
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: Image.asset(
+                      'assets/images/clement-m-SsMMCEwFMuc-unsplash_(1).jpg',
+                    ).image,
+                  ),
+                ),
+                child: Align(
+                  alignment: AlignmentDirectional(-1.0, 0.0),
+                  child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 30.0,
-                        borderWidth: 1.0,
-                        buttonSize: 40.0,
-                        fillColor: Color(0x33090F13),
-                        icon: Icon(
-                          Icons.arrow_back_rounded,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 20.0,
-                        ),
-                        onPressed: () async {
-                          context.safePop();
-                        },
-                      ).animateOnPageLoad(
-                          animationsMap['iconButtonOnPageLoadAnimation']!),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Align(
-                        alignment: Alignment(0.0, 0),
-                        child: TabBar(
-                          labelColor: Color(0xFF2458BE),
-                          unselectedLabelColor:
-                              FlutterFlowTheme.of(context).secondaryText,
-                          labelStyle:
-                              FlutterFlowTheme.of(context).titleMedium.override(
-                                    fontFamily: 'Lexend Deca',
-                                    fontSize: 19.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                          unselectedLabelStyle: TextStyle(),
-                          indicatorColor: FlutterFlowTheme.of(context).primary,
-                          padding: EdgeInsets.all(4.0),
-                          tabs: [
-                            Tab(
-                              text: 'Canção da Cavalaria',
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 44.0, 16.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 250.0, 0.0, 0.0),
+                              child: FlutterFlowIconButton(
+                                borderColor: Color(0xFFFB0303),
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 40.0,
+                                fillColor: Color(0xFFFCEC20),
+                                icon: Icon(
+                                  Icons.arrow_back_rounded,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 20.0,
+                                ),
+                                onPressed: () async {
+                                  context.safePop();
+                                },
+                              ).animateOnPageLoad(animationsMap[
+                                  'iconButtonOnPageLoadAnimation']!),
                             ),
                           ],
-                          controller: _model.tabBarController,
-                          onTap: (i) async {
-                            [() async {}][i]();
-                          },
                         ),
                       ),
                       Expanded(
-                        child: TabBarView(
-                          controller: _model.tabBarController,
+                        child: Column(
                           children: [
-                            ListView(
-                              padding: EdgeInsets.zero,
-                              scrollDirection: Axis.vertical,
-                              children: [
-                                ListView(
-                                  padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.vertical,
-                                  children: [
-                                    ListView(
-                                      padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.vertical,
-                                      children: [
-                                        ListView(
-                                          padding: EdgeInsets.zero,
-                                          shrinkWrap: true,
-                                          scrollDirection: Axis.vertical,
-                                          children: [
-                                            ListView(
-                                              padding: EdgeInsets.zero,
-                                              shrinkWrap: true,
-                                              scrollDirection: Axis.vertical,
-                                              children: [
-                                                Text(
-                                                  'Arma ligeira que transpõe os montes\nCaudais profundos, com ardor e glória\nEstrela guia em negros horizontes\nPelo caminho da luta e da vitória\n\nCavalaria, Cavalaria\nTu és na guerra a nossa estrela guia\n\nArma de tradição que o peito embala\nCuja história é de luz e de fulgor\nPelo choque, na carga, ela avassala\nE, ao inimigo, impõe o seu valor\n\nCavalaria, Cavalaria\nTu és na guerra a nossa estrela guia\n\nMontado sobre o dorso deste amigo\nO cavalo que, altivo, nos conduz\nLevamo-lo, também, para o perigo\nPara lutar conosco sob a cruz\n\nCavalaria, Cavalaria\nTu és na guerra a nossa estrela guia\n\nDe Andrade Neves o Osório, legendário\nE outros heróis que honram a nossa história\nEvocamos o valor extraordinário\nPelo Brasil a nossa maior glória!\n\nCavalaria, Cavalaria\nTu és na guerra a nossa estrela guia\n\nCavalaria, Cavalaria\nTu és na guerra a nossa estrela guia',
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
-                                                        color:
-                                                            Color(0xFF010101),
-                                                        fontSize: 20.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                            Align(
+                              alignment: Alignment(0.0, 0),
+                              child: TabBar(
+                                labelColor: Color(0xFFFCE220),
+                                unselectedLabelColor:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      fontSize: 19.0,
+                                      letterSpacing: 0.0,
                                     ),
-                                  ],
-                                ),
-                              ],
+                                unselectedLabelStyle: TextStyle(),
+                                indicatorColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                padding: EdgeInsets.all(4.0),
+                                tabs: [
+                                  Tab(
+                                    text: 'Canção da Arma de Cavalaria',
+                                  ),
+                                ],
+                                controller: _model.tabBarController,
+                                onTap: (i) async {
+                                  [() async {}][i]();
+                                },
+                              ),
+                            ),
+                            Expanded(
+                              child: TabBarView(
+                                controller: _model.tabBarController,
+                                children: [
+                                  ListView(
+                                    padding: EdgeInsets.zero,
+                                    scrollDirection: Axis.vertical,
+                                    children: [
+                                      Text(
+                                        'Arma ligeira que transpõe os montes\nCaudais profundos, com ardor e glória\nEstrela guia em negros horizontes\nPelo caminho da luta e da vitória\n\nCavalaria, Cavalaria\nTu és na guerra a nossa estrela guia\n\nArma de tradição que o peito embala\nCuja história é de luz e de fulgor\nPelo choque, na carga, ela avassala\nE, ao inimigo, impõe o seu valor\n\nCavalaria, Cavalaria\nTu és na guerra a nossa estrela guia\n\nMontado sobre o dorso deste amigo\nO cavalo que, altivo, nos conduz\nLevamo-lo, também, para o perigo\nPara lutar conosco sob a cruz\n\nCavalaria, Cavalaria\nTu és na guerra a nossa estrela guia\n\nDe Andrade Neves o Osório, legendário\nE outros heróis que honram a nossa história\nEvocamos o valor extraordinário\nPelo Brasil a nossa maior glória!\n\nCavalaria, Cavalaria\nTu és na guerra a nossa estrela guia\n\nCavalaria, Cavalaria\nTu és na guerra a nossa estrela guia.',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -221,33 +205,17 @@ class _CancaodaCavalariaWidgetState extends State<CancaodaCavalariaWidget>
                     ],
                   ),
                 ),
-                FlutterFlowAudioPlayer(
-                  audio: Audio(
-                    'assets/audios/cancao_cavalaria.mp3',
-                    metas: Metas(
-                      id: 'cancao_cavalaria.mp3-744732a9',
-                      title: 'Canção da Cavalaria',
-                    ),
-                  ),
-                  titleTextStyle:
-                      FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Poppins',
-                            letterSpacing: 0.0,
-                          ),
-                  playbackDurationTextStyle:
-                      FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Poppins',
-                            letterSpacing: 0.0,
-                          ),
-                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  playbackButtonColor: Color(0xFFFD1919),
-                  activeTrackColor: FlutterFlowTheme.of(context).alternate,
-                  elevation: 4.0,
-                  playInBackground:
-                      PlayInBackground.disabledRestoreOnForeground,
-                ),
-              ],
-            ),
+              ),
+              FlutterFlowYoutubePlayer(
+                url: 'https://www.youtube.com/watch?v=wkc3eOR9_Zs',
+                autoPlay: false,
+                looping: true,
+                mute: false,
+                showControls: true,
+                showFullScreen: true,
+                strictRelatedVideos: true,
+              ),
+            ],
           ),
         ),
       ),

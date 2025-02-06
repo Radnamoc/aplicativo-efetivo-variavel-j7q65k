@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/flutter_flow_youtube_player.dart';
 import 'dart:math';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -80,135 +80,183 @@ class _CancaodaSaudeWidgetState extends State<CancaodaSaudeWidget>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-        FocusManager.instance.primaryFocus?.unfocus();
-      },
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).primaryBackground,
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/brook-anderson-gTQbZXL417Q-unsplash.jpg',
-              ).image,
-            ),
-          ),
-          child: Align(
-            alignment: AlignmentDirectional(-1.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 44.0, 16.0, 0.0),
-                  child: Row(
+    return YoutubeFullScreenWrapper(
+      child: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          body: Stack(
+            children: [
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: Image.asset(
+                      'assets/images/clement-m-SsMMCEwFMuc-unsplash_(1).jpg',
+                    ).image,
+                  ),
+                ),
+                child: Align(
+                  alignment: AlignmentDirectional(-1.0, 0.0),
+                  child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 30.0,
-                        borderWidth: 1.0,
-                        buttonSize: 40.0,
-                        fillColor: Color(0x33090F13),
-                        icon: Icon(
-                          Icons.arrow_back_rounded,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 20.0,
-                        ),
-                        onPressed: () async {
-                          context.safePop();
-                        },
-                      ).animateOnPageLoad(
-                          animationsMap['iconButtonOnPageLoadAnimation']!),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Align(
-                        alignment: Alignment(0.0, 0),
-                        child: TabBar(
-                          labelColor: Color(0xFF2458BE),
-                          unselectedLabelColor:
-                              FlutterFlowTheme.of(context).secondaryText,
-                          labelStyle:
-                              FlutterFlowTheme.of(context).titleMedium.override(
-                                    fontFamily: 'Lexend Deca',
-                                    fontSize: 19.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                          unselectedLabelStyle: TextStyle(),
-                          indicatorColor: FlutterFlowTheme.of(context).primary,
-                          padding: EdgeInsets.all(4.0),
-                          tabs: [
-                            Tab(
-                              text: 'Canção do Serviço de Saúde',
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 44.0, 16.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 250.0, 0.0, 0.0),
+                              child: FlutterFlowIconButton(
+                                borderColor: Color(0xF3EE0505),
+                                borderRadius: 30.0,
+                                borderWidth: 1.0,
+                                buttonSize: 40.0,
+                                fillColor: Color(0xFFFCEC20),
+                                icon: Icon(
+                                  Icons.arrow_back_rounded,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 20.0,
+                                ),
+                                onPressed: () async {
+                                  context.safePop();
+                                },
+                              ).animateOnPageLoad(animationsMap[
+                                  'iconButtonOnPageLoadAnimation']!),
                             ),
                           ],
-                          controller: _model.tabBarController,
-                          onTap: (i) async {
-                            [() async {}][i]();
-                          },
                         ),
                       ),
                       Expanded(
-                        child: TabBarView(
-                          controller: _model.tabBarController,
+                        child: Column(
                           children: [
-                            ListView(
-                              padding: EdgeInsets.zero,
-                              scrollDirection: Axis.vertical,
-                              children: [
-                                ListView(
-                                  padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.vertical,
-                                  children: [
-                                    ListView(
-                                      padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.vertical,
-                                      children: [
-                                        ListView(
-                                          padding: EdgeInsets.zero,
-                                          shrinkWrap: true,
-                                          scrollDirection: Axis.vertical,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 20.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Nós soldados do corpo de Saúde\nSem temermos o rugido da metralha\nAos heróis que tombam na vanguarda\nLhes levamos o socorro na batalha\n\nNós soldados do corpo de Saúde\nNão usamos a força do fuzil\nPelejamos ao lado da ciência\nPela glória e pela honra do Brasil\n\nFiéis servos, somos nós da medicina\nSeja na guerra, seja nos dias de paz\nCombatendo pelo bem da humanidade\nSem vacilarmos e sem descanso jamais\n\nNosso lema é prestar a caridade\nAo moribundo, ao ferido, ao mutilado\nProcurando amenizar o sofrimento\nE bem servir ao nosso Brasil adorado',
-                                                textAlign: TextAlign.center,
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyMedium
-                                                    .override(
-                                                      fontFamily: 'Lexend Deca',
-                                                      color: Color(0xFF010101),
-                                                      fontSize: 20.0,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                            Align(
+                              alignment: Alignment(0.0, 0),
+                              child: TabBar(
+                                labelColor: Color(0xFFF6E20F),
+                                unselectedLabelColor:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      fontSize: 19.0,
+                                      letterSpacing: 0.0,
                                     ),
-                                  ],
-                                ),
-                              ],
+                                unselectedLabelStyle: TextStyle(),
+                                indicatorColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                padding: EdgeInsets.all(4.0),
+                                tabs: [
+                                  Tab(
+                                    text: 'Canção do Serviço de Saúde',
+                                  ),
+                                ],
+                                controller: _model.tabBarController,
+                                onTap: (i) async {
+                                  [() async {}][i]();
+                                },
+                              ),
+                            ),
+                            Expanded(
+                              child: TabBarView(
+                                controller: _model.tabBarController,
+                                children: [
+                                  ListView(
+                                    padding: EdgeInsets.zero,
+                                    scrollDirection: Axis.vertical,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 20.0, 0.0, 0.0),
+                                        child: Text(
+                                          'Nós soldados do corpo de Saúde\nSem temermos o rugido da metralha\nAos heróis que tombam na vanguarda\nLhes levamos o socorro na batalha\n\nNós soldados do corpo de Saúde\nNão usamos a força do fuzil\nPelejamos ao lado da ciência\nPela glória e pela honra do Brasil\n\nFiéis servos, somos nós da medicina\nSeja na guerra, seja nos dias de paz\nCombatendo pelo bem da humanidade\nSem vacilarmos e sem descanso jamais\n\nNosso lema é prestar a caridade\nAo moribundo, ao ferido, ao mutilado\nProcurando amenizar o sofrimento\nE bem servir ao nosso Brasil adorado',
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Lexend Deca',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .tertiary,
+                                                fontSize: 20.0,
+                                                letterSpacing: 0.0,
+                                              ),
+                                        ),
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            '   ',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            '     ',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            '      ',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            '        \n\n\n',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Lexend Deca',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -216,33 +264,18 @@ class _CancaodaSaudeWidgetState extends State<CancaodaSaudeWidget>
                     ],
                   ),
                 ),
-                FlutterFlowAudioPlayer(
-                  audio: Audio(
-                    'assets/audios/cancao_servico_saude.mp3',
-                    metas: Metas(
-                      id: 'cancao_servico_saude.mp3-0d9ffbce',
-                      title: 'Canção do Serviço de Saúde',
-                    ),
-                  ),
-                  titleTextStyle:
-                      FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Poppins',
-                            letterSpacing: 0.0,
-                          ),
-                  playbackDurationTextStyle:
-                      FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Poppins',
-                            letterSpacing: 0.0,
-                          ),
-                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  playbackButtonColor: Color(0xFFFD1919),
-                  activeTrackColor: FlutterFlowTheme.of(context).alternate,
-                  elevation: 4.0,
-                  playInBackground:
-                      PlayInBackground.disabledRestoreOnForeground,
-                ),
-              ],
-            ),
+              ),
+              FlutterFlowYoutubePlayer(
+                url:
+                    'https://www.youtube.com/watch?v=qN192Om7POo&list=PLnkYkTv4HbMZE1p8IQnYXvyEftb0zl2UM&index=15',
+                autoPlay: false,
+                looping: true,
+                mute: false,
+                showControls: true,
+                showFullScreen: true,
+                strictRelatedVideos: true,
+              ),
+            ],
           ),
         ),
       ),

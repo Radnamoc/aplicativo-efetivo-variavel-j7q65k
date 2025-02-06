@@ -1,12 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import '../auth/firebase_auth/auth_util.dart';
 
 import '../flutter_flow/flutter_flow_util.dart';
 import 'schema/util/firestore_util.dart';
 
-import 'schema/usuarios_record.dart';
-import 'schema/dadospessoais_record.dart';
 import 'schema/administrador_record.dart';
 import 'schema/dadospessoais01_record.dart';
 import 'schema/organizacaomilitar_record.dart';
@@ -18,88 +14,9 @@ export 'schema/index.dart';
 export 'schema/util/firestore_util.dart';
 export 'schema/util/schema_util.dart';
 
-export 'schema/usuarios_record.dart';
-export 'schema/dadospessoais_record.dart';
 export 'schema/administrador_record.dart';
 export 'schema/dadospessoais01_record.dart';
 export 'schema/organizacaomilitar_record.dart';
-
-/// Functions to query UsuariosRecords (as a Stream and as a Future).
-Future<int> queryUsuariosRecordCount({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      UsuariosRecord.collection,
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<UsuariosRecord>> queryUsuariosRecord({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      UsuariosRecord.collection,
-      UsuariosRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<UsuariosRecord>> queryUsuariosRecordOnce({
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      UsuariosRecord.collection,
-      UsuariosRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query DadospessoaisRecords (as a Stream and as a Future).
-Future<int> queryDadospessoaisRecordCount({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      DadospessoaisRecord.collection(parent),
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<DadospessoaisRecord>> queryDadospessoaisRecord({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      DadospessoaisRecord.collection(parent),
-      DadospessoaisRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<DadospessoaisRecord>> queryDadospessoaisRecordOnce({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      DadospessoaisRecord.collection(parent),
-      DadospessoaisRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
 
 /// Functions to query AdministradorRecords (as a Stream and as a Future).
 Future<int> queryAdministradorRecordCount({

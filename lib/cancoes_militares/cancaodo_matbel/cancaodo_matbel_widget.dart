@@ -1,9 +1,9 @@
 import '/flutter_flow/flutter_flow_animations.dart';
-import '/flutter_flow/flutter_flow_audio_player.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/flutter_flow_youtube_player.dart';
 import 'dart:math';
 import 'dart:ui';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -80,130 +80,123 @@ class _CancaodoMatbelWidgetState extends State<CancaodoMatbelWidget>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-        FocusManager.instance.primaryFocus?.unfocus();
-      },
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).primaryBackground,
-            image: DecorationImage(
-              fit: BoxFit.cover,
-              image: Image.asset(
-                'assets/images/brook-anderson-gTQbZXL417Q-unsplash.jpg',
-              ).image,
-            ),
-          ),
-          child: Align(
-            alignment: AlignmentDirectional(-1.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(16.0, 44.0, 16.0, 0.0),
-                  child: Row(
+    return YoutubeFullScreenWrapper(
+      child: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+          FocusManager.instance.primaryFocus?.unfocus();
+        },
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          body: Stack(
+            children: [
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primaryBackground,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: Image.asset(
+                      'assets/images/clement-m-SsMMCEwFMuc-unsplash_(1).jpg',
+                    ).image,
+                  ),
+                ),
+                child: Align(
+                  alignment: AlignmentDirectional(-1.0, 0.0),
+                  child: Column(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      FlutterFlowIconButton(
-                        borderColor: Colors.transparent,
-                        borderRadius: 30.0,
-                        borderWidth: 1.0,
-                        buttonSize: 40.0,
-                        fillColor: Color(0x33090F13),
-                        icon: Icon(
-                          Icons.arrow_back_rounded,
-                          color: FlutterFlowTheme.of(context).primaryText,
-                          size: 20.0,
-                        ),
-                        onPressed: () async {
-                          context.safePop();
-                        },
-                      ).animateOnPageLoad(
-                          animationsMap['iconButtonOnPageLoadAnimation']!),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Align(
-                        alignment: Alignment(0.0, 0),
-                        child: TabBar(
-                          labelColor: Color(0xFF2458BE),
-                          unselectedLabelColor:
-                              FlutterFlowTheme.of(context).secondaryText,
-                          labelStyle:
-                              FlutterFlowTheme.of(context).titleMedium.override(
-                                    fontFamily: 'Lexend Deca',
-                                    fontSize: 19.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                          unselectedLabelStyle: TextStyle(),
-                          indicatorColor: FlutterFlowTheme.of(context).primary,
-                          padding: EdgeInsets.all(4.0),
-                          tabs: [
-                            Tab(
-                              text: 'Canção do Quadro de Material Bélico',
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            16.0, 44.0, 16.0, 0.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 250.0, 0.0, 0.0),
+                              child: FlutterFlowIconButton(
+                                borderColor: Color(0xFDFB0A0A),
+                                borderRadius: 50.0,
+                                borderWidth: 1.0,
+                                buttonSize: 40.0,
+                                fillColor: Color(0xFFFCEC20),
+                                icon: Icon(
+                                  Icons.arrow_back_rounded,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  size: 20.0,
+                                ),
+                                onPressed: () async {
+                                  context.pushNamed('PaginaInicial1');
+                                },
+                              ).animateOnPageLoad(animationsMap[
+                                  'iconButtonOnPageLoadAnimation']!),
                             ),
                           ],
-                          controller: _model.tabBarController,
-                          onTap: (i) async {
-                            [() async {}][i]();
-                          },
                         ),
                       ),
                       Expanded(
-                        child: TabBarView(
-                          controller: _model.tabBarController,
+                        child: Column(
                           children: [
-                            ListView(
-                              padding: EdgeInsets.zero,
-                              scrollDirection: Axis.vertical,
-                              children: [
-                                ListView(
-                                  padding: EdgeInsets.zero,
-                                  shrinkWrap: true,
-                                  scrollDirection: Axis.vertical,
-                                  children: [
-                                    ListView(
-                                      padding: EdgeInsets.zero,
-                                      shrinkWrap: true,
-                                      scrollDirection: Axis.vertical,
-                                      children: [
-                                        ListView(
-                                          padding: EdgeInsets.zero,
-                                          shrinkWrap: true,
-                                          scrollDirection: Axis.vertical,
-                                          children: [
-                                            Text(
-                                              'Nos paióis, nas oficinas\nEnfrentando ardis e minas\nPorfiaremos de alma forte\nCom denodo e valentia\nNoite e dia sem cessar\nCumpriremos nosso dever\nPouco importa vida ou morte\nNosso intuito é vencer\n\nNa paz, o progresso\nNa guerra, a vitória\nConstruir a grandeza\nLutar pela glória\nDa pátria com ardor\nCom arrojo e bravura\nCom esforço de gigante\nSeguiremos sempre avante\nSem temer treva ou metralha\nCumpriremos a missão\nApoiando a vanguarda\nQuer no ataque ou na defesa\nDo triunfo, da batalha\nLevaremos a certeza\n\nNa paz, o progresso\nNa guerra, a vitória\nConstruir a grandeza\nLutar pela glória\nDa pátria com ardor\nCom arrojo e bravura',
-                                              textAlign: TextAlign.center,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Lexend Deca',
-                                                    color: Color(0xFF010101),
-                                                    fontSize: 20.0,
-                                                    letterSpacing: 0.0,
-                                                  ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                            Align(
+                              alignment: Alignment(0.0, 0),
+                              child: TabBar(
+                                labelColor: Color(0xFFFCEC20),
+                                unselectedLabelColor:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .titleMedium
+                                    .override(
+                                      fontFamily: 'Lexend Deca',
+                                      fontSize: 19.0,
+                                      letterSpacing: 0.0,
                                     ),
-                                  ],
-                                ),
-                              ],
+                                unselectedLabelStyle: TextStyle(),
+                                indicatorColor:
+                                    FlutterFlowTheme.of(context).primary,
+                                padding: EdgeInsets.all(4.0),
+                                tabs: [
+                                  Tab(
+                                    text: 'Canção do Quadro de Material Bélico',
+                                  ),
+                                ],
+                                controller: _model.tabBarController,
+                                onTap: (i) async {
+                                  [() async {}][i]();
+                                },
+                              ),
+                            ),
+                            Expanded(
+                              child: TabBarView(
+                                controller: _model.tabBarController,
+                                children: [
+                                  ListView(
+                                    padding: EdgeInsets.zero,
+                                    scrollDirection: Axis.vertical,
+                                    children: [
+                                      Text(
+                                        'Nos paióis, nas oficinas\nEnfrentando ardis e minas\nPorfiaremos de alma forte\nCom denodo e valentia\nNoite e dia sem cessar\nCumpriremos nosso dever\nPouco importa vida ou morte\nNosso intuito é vencer\n\nNa paz, o progresso\nNa guerra, a vitória\nConstruir a grandeza\nLutar pela glória\nDa pátria com ardor\nCom arrojo e bravura\nCom esforço de gigante\nSeguiremos sempre avante\nSem temer treva ou metralha\nCumpriremos a missão\nApoiando a vanguarda\nQuer no ataque ou na defesa\nDo triunfo, da batalha\nLevaremos a certeza\n\nNa paz, o progresso\nNa guerra, a vitória\nConstruir a grandeza\nLutar pela glória\nDa pátria com ardor\nCom arrojo e bravura',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
+                                              fontSize: 20.0,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ],
                         ),
@@ -211,33 +204,17 @@ class _CancaodoMatbelWidgetState extends State<CancaodoMatbelWidget>
                     ],
                   ),
                 ),
-                FlutterFlowAudioPlayer(
-                  audio: Audio(
-                    'assets/audios/cancao_material_belico.mp3',
-                    metas: Metas(
-                      id: 'cancao_material_belico.mp3-90f7b3cc',
-                      title: 'Canção Material Bélico',
-                    ),
-                  ),
-                  titleTextStyle:
-                      FlutterFlowTheme.of(context).titleLarge.override(
-                            fontFamily: 'Poppins',
-                            letterSpacing: 0.0,
-                          ),
-                  playbackDurationTextStyle:
-                      FlutterFlowTheme.of(context).labelMedium.override(
-                            fontFamily: 'Poppins',
-                            letterSpacing: 0.0,
-                          ),
-                  fillColor: FlutterFlowTheme.of(context).secondaryBackground,
-                  playbackButtonColor: Color(0xFFFD1919),
-                  activeTrackColor: FlutterFlowTheme.of(context).alternate,
-                  elevation: 4.0,
-                  playInBackground:
-                      PlayInBackground.disabledRestoreOnForeground,
-                ),
-              ],
-            ),
+              ),
+              FlutterFlowYoutubePlayer(
+                url: 'https://www.youtube.com/watch?v=09Dg8ikcHiU',
+                autoPlay: false,
+                looping: true,
+                mute: false,
+                showControls: true,
+                showFullScreen: true,
+                strictRelatedVideos: true,
+              ),
+            ],
           ),
         ),
       ),

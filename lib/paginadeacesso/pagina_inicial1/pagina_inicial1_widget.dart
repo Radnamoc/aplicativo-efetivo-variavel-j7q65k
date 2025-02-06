@@ -1,4 +1,3 @@
-import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_pdf_viewer.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -11,7 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import 'package:webviewx_plus/webviewx_plus.dart';
 import 'pagina_inicial1_model.dart';
 export 'pagina_inicial1_model.dart';
 
@@ -35,7 +33,7 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
 
     _model.tabBarController = TabController(
       vsync: this,
-      length: 8,
+      length: 7,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
@@ -58,416 +56,6 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).warning,
-        drawer: Drawer(
-          elevation: 16.0,
-          child: WebViewAware(
-            child: Container(
-              width: 100.0,
-              height: 100.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).dark900,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  if (responsiveVisibility(
-                    context: context,
-                    phone: false,
-                    tablet: false,
-                  ))
-                    Expanded(
-                      child: Container(
-                        width: 194.0,
-                        height: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFF1F4F8),
-                          borderRadius: BorderRadius.circular(0.0),
-                          border: Border.all(
-                            color: Color(0xFFE5E7EB),
-                            width: 1.0,
-                          ),
-                        ),
-                      ),
-                    ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 16.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 45.0, 16.0, 12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                width: 102.0,
-                                height: 111.0,
-                                decoration: BoxDecoration(
-                                  color: Color(0xFFFD1919),
-                                  image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: Image.network(
-                                      currentUserPhoto,
-                                    ).image,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12.0),
-                                  border: Border.all(
-                                    color: Color(0xFFFD1919),
-                                    width: 2.0,
-                                  ),
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    valueOrDefault<String>(
-                                      currentUserPhoto,
-                                      'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAPFBMVEXm5uampqajo6Pa2trp6emhoaHl5eXg4OCoqKjc3Nzf39/W1tatra2wsLDIyMi8vLy2trbExMTOzs61tbXhv6YVAAAEl0lEQVR4nO2d27aqMAxFpYSbioL+/79uEPEGW4WmSepY8+287Tlikza0OZsNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKUMcmL4ptUeTDP36JTqc6ted9mTiXOZeU+3N7qja/YtnZHZqyF3ukUy2bQ2ep/ed5Q9tD7V7s7pauPmzjdqS0SebtbpZJk8brSOn5n+g9R/IcqSNVdfZRbyCrq/gcKW+/iN89jm0emSPt9t/7XRz3u6gUqV3md3Fs41Gk/LxcsFM8x/JLpapcI9gplnEkHNqt0huIYTHSbl0Ar2G0r0ipj2CnaL36U+Un2CkaX4tF6SmYJGWhLfGW2jeEXRBrbYk30NFfsFM8mv2d0u7brfZ7MrMJNWfx68m1Vebh+Y32GP2d+pX6F0Wbv9OaTTBJLOZTOvGkmYHsZDCIe0bBJNlr60zgqhQj9ioGca7CntqaYcUbwi6IlbbSM3y1cMRaTcz9zxSvlLY2NozVfsTttKUeWdM9/Ghoq7vInUl7TO1rtgEEk2SrrXWHc9N9x9L2mw5BDA+GDNmr4cXQUkUMkWhMpZoA9b7HUM0vgggmiZ3OqXejex5nZ/Pt+a3iX8NUW+xGyn10Gsjs7EyZz/cwVOD31+Hv59IwRwtLh4vf39PkvN3gkb0dQ2qCnC0aO2eLEG0aW40aOgUxtPR1Jki5MFQsAqUaQ4kmTBvDVBMjyEI0tQzDnPLtnPB7qGEXNFQNL7AfoAwdnQaIe2taGgshe9vbUsP7Ct+VrwFLxXCAd29qaU96g+Hy7B2T12g5V6LBVXiBb3Nq70bUBWJrDGdWL+xzJRuTaeYKw0V241fZedqKdpqIUziuLFi6oDCD/z1ak3dnH6HWTzEznGWu+CVUy2n0hk8UI4hgDx3WKmZGN2sTaPdhkMI8LooXpANUrCj9ri6iEexZnG9cq/0nL2ThyIHYBg700JJPbq6JbhoPbdtFj/Jd2UY1qIbS44KxH1dHd7R6KpxAabPYb3CMYxgPFev8ro7mKwblbea1L82MD6pZPJZmxtFy3aCc6bW61TBSunJqy0SxtJlxfr4jnB9Z3wE31r7MUOGdYp5xe1t1g20JPiiaWoyUMusN2FEM87DLUOc0lKAZxXCCRhSpCubXY2BqFOvH7Sn6n7tzlg9q/+Nq5dIf5m3lk6LuFcX17e3vUW2E+8+f+wbNGXWBXiG8ondZOMwV/Sl6n9wCPeiaUdR64iXzG+3RuUEUZszAPDpn/kJOsFNU2NqEr/VPhgp1X6QUPiiKP6CRDaFGEIVDKB9E6RDKBzHUJIx3iKZTyVo4IlsT2d+PfIPoG5NAgzDekwnuTuXzTI9krgn0/v4Tgu/zA3ZI3yE3Z1DnRyr5MxVqXkwRa2eI79hGpHZuYeYLfGUodMtdaxkKLkStZSjWr9HYdY/I7L7FmohTZNqKeolGKtVIdbpnDUW633qpVCqZss+XX4LILHqV0++IyCmYe7TAMiR2pqLd/FdEuvu/b7jV6NGMZBJvhH/fkP3/6lhkKHFC3GZOD5EY5qkm1i5HAwAAAAAAAAAAAAAAAAAAAACAJf4AKkJE8O36wbkAAAAASUVORK5CYII=',
-                                    ),
-                                    width: double.infinity,
-                                    height: double.infinity,
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      12.0, 0.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        currentUserDisplayName,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .override(
-                                              fontFamily: 'Plus Jakarta Sans',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .grayDark,
-                                              fontSize: 16.0,
-                                              letterSpacing: 0.0,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: Text(
-                                          currentUserEmail,
-                                          style: FlutterFlowTheme.of(context)
-                                              .labelMedium
-                                              .override(
-                                                fontFamily: 'Plus Jakarta Sans',
-                                                color: Color(0xFF606A85),
-                                                fontSize: 14.0,
-                                                letterSpacing: 0.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Divider(
-                          height: 12.0,
-                          thickness: 2.0,
-                          color: Color(0xFFE5E7EB),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 20.0, 0.0, 0.0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 12.0, 0.0, 0.0),
-                                child: Text(
-                                  'Configurações',
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Plus Jakarta Sans',
-                                        color: Color(0xFFFD1919),
-                                        fontSize: 14.0,
-                                        letterSpacing: 0.0,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 200),
-                                  curve: Curves.easeInOut,
-                                  width: double.infinity,
-                                  height: 44.0,
-                                  decoration: BoxDecoration(
-                                    color:
-                                        FlutterFlowTheme.of(context).grayIcon,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 8.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.space_dashboard,
-                                          color: Color(0xFFFD1919),
-                                          size: 24.0,
-                                        ),
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'Meu perfil',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily:
-                                                        'Plus Jakarta Sans',
-                                                    color: Color(0xFF15161E),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 200),
-                                  curve: Curves.easeInOut,
-                                  width: double.infinity,
-                                  height: 44.0,
-                                  decoration: BoxDecoration(
-                                    color:
-                                        FlutterFlowTheme.of(context).grayIcon,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 8.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.history_toggle_off_sharp,
-                                          color: Color(0xFFFD1919),
-                                          size: 24.0,
-                                        ),
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'Horarios do Rancho',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily:
-                                                        'Plus Jakarta Sans',
-                                                    color: Color(0xFF15161E),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 200),
-                                  curve: Curves.easeInOut,
-                                  width: double.infinity,
-                                  height: 44.0,
-                                  decoration: BoxDecoration(
-                                    color:
-                                        FlutterFlowTheme.of(context).grayIcon,
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        8.0, 0.0, 8.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.location_pin,
-                                          color: Color(0xFFFD1919),
-                                          size: 24.0,
-                                        ),
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 0.0, 0.0),
-                                            child: Text(
-                                              'Dados do Batalhão',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily:
-                                                        'Plus Jakarta Sans',
-                                                    color: Color(0xFF15161E),
-                                                    fontSize: 14.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 200),
-                                  curve: Curves.easeInOut,
-                                  width: double.infinity,
-                                  height: 44.0,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFF1F4F8),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                child: AnimatedContainer(
-                                  duration: Duration(milliseconds: 200),
-                                  curve: Curves.easeInOut,
-                                  width: double.infinity,
-                                  height: 44.0,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xFFF1F4F8),
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                ),
-                              ),
-                            ].divide(SizedBox(height: 12.0)),
-                          ),
-                        ),
-                        Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 30.0, 0.0, 0.0),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed('paginaZero');
-                              },
-                              text: 'Sair',
-                              options: FFButtonOptions(
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 0.0, 24.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFFFD1919),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Colors.white,
-                                      letterSpacing: 0.0,
-                                    ),
-                                elevation: 3.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 100.0, 16.0, 0.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              InkWell(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                onTap: () async {
-                                  if (scaffoldKey.currentState!.isDrawerOpen ||
-                                      scaffoldKey
-                                          .currentState!.isEndDrawerOpen) {
-                                    Navigator.pop(context);
-                                  }
-                                },
-                                child: Icon(
-                                  Icons.menu_open_rounded,
-                                  color: Color(0xFF606A85),
-                                  size: 35.0,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
         body: NestedScrollView(
           floatHeaderSlivers: true,
           headerSliverBuilder: (context, _) => [
@@ -476,20 +64,6 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
               floating: false,
               backgroundColor: Color(0xFFFD1919),
               automaticallyImplyLeading: false,
-              leading: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  scaffoldKey.currentState!.openDrawer();
-                },
-                child: Icon(
-                  Icons.list,
-                  color: FlutterFlowTheme.of(context).dark900,
-                  size: 32.0,
-                ),
-              ),
               title: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -573,14 +147,10 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                 text:
                                     'Conheça a história do Logístico de Minas',
                               ),
-                              Tab(
-                                text: 'Conheça seus Comandantes',
-                              ),
                             ],
                             controller: _model.tabBarController,
                             onTap: (i) async {
                               [
-                                () async {},
                                 () async {},
                                 () async {},
                                 () async {},
@@ -1633,7 +1203,7 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                                                       0.0,
                                                                       0.0),
                                                           child: Text(
-                                                            'Title',
+                                                            'Letra: 3º Sgt Paulo Lourenço Machado\nMúsica: 1º Sgt José Apolinário da Costa Filho',
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .labelMedium
@@ -1743,7 +1313,7 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Title',
+                                                          'Escrita por José dos Santos Rodrigues e a melodia foi composta pela Banda da AMAN.',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium
@@ -1853,7 +1423,7 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Title',
+                                                          'Adelmar Alheiros da Silva / João Cícero de Souza',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium
@@ -1962,7 +1532,7 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Title',
+                                                          'Letra de Hildo Rangel e música de Thiers Cardoso.',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium
@@ -2071,7 +1641,7 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Title',
+                                                          'Autor: Teófilo Ottoni da Fonseca',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium
@@ -2180,7 +1750,7 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Title',
+                                                          'Composição: Jorge Pinheiro.',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium
@@ -2290,7 +1860,7 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Title',
+                                                          'Autor: Gen de Brigada Aurélio de Lyra Tavares',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium
@@ -2400,7 +1970,7 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Title',
+                                                          'Letra de ALOÍSIO PEREIRA PIRES. Música de ABDON LYRA.',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium
@@ -2508,7 +2078,7 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                                                     0.0,
                                                                     0.0),
                                                         child: Text(
-                                                          'Title',
+                                                          'Composição: José Dos Santos Rodrigues.',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium
@@ -2529,6 +2099,38 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                         ),
                                       ),
                                     ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 8.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed('CancaodaSaude');
+                                        },
+                                        child: Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .grayIcon,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                blurRadius: 3.0,
+                                                color: Color(0x20000000),
+                                                offset: Offset(
+                                                  0.0,
+                                                  1.0,
+                                                ),
+                                              )
+                                            ],
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -2536,31 +2138,28 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                 width: 100.0,
                                 height: 100.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                                child: SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Expanded(
-                                        child: Align(
-                                          alignment:
-                                              AlignmentDirectional(0.0, -1.0),
-                                          child: FlutterFlowWebView(
-                                            content:
-                                                'https://www.planalto.gov.br/ccivil_03/decreto/2002/d4346.htm',
-                                            bypass: false,
-                                            width: 393.0,
-                                            height: 100000.0,
-                                            verticalScroll: false,
-                                            horizontalScroll: false,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  border: Border.all(
+                                    color:
+                                        FlutterFlowTheme.of(context).tertiary,
                                   ),
+                                ),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: FlutterFlowWebView(
+                                        content:
+                                            'https://www.planalto.gov.br/ccivil_03/decreto/2002/d4346.htm',
+                                        bypass: false,
+                                        height: 856.0,
+                                        verticalScroll: false,
+                                        horizontalScroll: false,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Container(
@@ -9671,7 +9270,11 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                       height: 404.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .secondaryBackground,
+                                            .tertiary,
+                                        border: Border.all(
+                                          color: FlutterFlowTheme.of(context)
+                                              .tertiary,
+                                        ),
                                       ),
                                       child: Align(
                                         alignment:
@@ -9706,15 +9309,18 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                 ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.asset(
-                                    'assets/images/WhatsApp_Image_2025-01-21_at_09.47.22.jpeg',
-                                    width: 313.0,
-                                    height: 200.0,
-                                    fit: BoxFit.contain,
-                                    alignment: Alignment(1.0, 0.0),
-                                  ),
+                                child: Stack(
+                                  children: [
+                                    Align(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      child: FlutterFlowPdfViewer(
+                                        assetPath:
+                                            'assets/pdfs/postos_e_graduaes_(7).pdf',
+                                        height: 685.38,
+                                        horizontalScroll: false,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               SingleChildScrollView(
@@ -9725,39 +9331,27 @@ class _PaginaInicial1WidgetState extends State<PaginaInicial1Widget>
                                       path:
                                           'assets/videos/WhatsApp_Video_2024-12-02_at_10.15.18.mp4',
                                       videoType: VideoType.asset,
-                                      autoPlay: false,
+                                      autoPlay: true,
                                       looping: true,
                                       showControls: true,
                                       allowFullScreen: true,
                                       allowPlaybackSpeedMenu: false,
                                     ),
-                                    Text(
-                                      '       \n\n                A HISTÓRIA DO LOGÍSTICO DE MINAS\n\n\nO 17º Batalhão Logístico Leve de Montanha é uma unidade militar de apoio logístico do Exército Brasileiro e tem sua origem na 4ª Companhia de Administração, fundada em 1915. Seu batismo de fogo ocorreu em 1932, durante a Revolução Constitucionalista. Dois anos depois, em 1934, transformou-se na 4ª Formação de Intendência Regional e, posteriormente, em 1946, em 4ª Companhia de Intendência, sediada em Santos Dumont.\n\nApós a 2ª Guerra Mundial, também em 1946, as coudelarias militares, unidades ligadas ao manejo de cavalos, começaram a perder importância. Em menos de cinco anos, foi criado o 4º Pelotão de Recuperação de Automóvel, destacando a transição para a motorização e mobilidade do transporte. Essas características marcantes foram fundamentais décadas depois na escolha de Mariano Procópio Ferreira Laje, como patrono do Logístico de Minas.\n\nSeu pioneirismo na implementação de infraestrutura logística e transporte o tornou um ícone na história do Brasil. Em 1950, o Pelotão de Recuperação de Automóvel se transforma em 4ª Companhia Leve de Manutenção. As operações de apoio logístico operacional funcionavam nas duas companhias autônomas até o início dos anos 70, quando o Exército Brasileiro implantou batalhões logísticos às suas fileiras.\n\nAssim, em 1972, nasce o 17º Batalhão Logístico, fruto da excelência constante e convergente caminhada entre as duas unidades logísticas de Minas Gerais. Durante 12 anos, o batalhão teve sedes em Santos Dumont e Juiz de Fora, até 1984, quando houve a permuta com o 4º Esquadrão de Cavalaria Mecanizado, localizado no bairro de Mariano Procópio. O Logístico de Minas carrega um legado substancial das organizações militares presentes em sua árvore genealógica.\n\nSua missão é constantemente superada pela busca de excelência, refletida em seu lema Apoiar sempre, cada vez melhor!',
-                                      textAlign: TextAlign.justify,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: Colors.black,
-                                            letterSpacing: 0.0,
-                                          ),
+                                    Expanded(
+                                      child: Text(
+                                        '       \n\n A HISTÓRIA DO LOGÍSTICO DE MINAS\n\n\nO 17º Batalhão Logístico Leve de Montanha é uma unidade militar de apoio logístico do Exército Brasileiro e tem sua origem na 4ª Companhia de Administração, fundada em 1915. Seu batismo de fogo ocorreu em 1932, durante a Revolução Constitucionalista. Dois anos depois, em 1934, transformou-se na 4ª Formação de Intendência Regional e, posteriormente, em 1946, em 4ª Companhia de Intendência, sediada em Santos Dumont.\n\nApós a 2ª Guerra Mundial, também em 1946, as coudelarias militares, unidades ligadas ao manejo de cavalos, começaram a perder importância. Em menos de cinco anos, foi criado o 4º Pelotão de Recuperação de Automóvel, destacando a transição para a motorização e mobilidade do transporte. Essas características marcantes foram fundamentais décadas depois na escolha de Mariano Procópio Ferreira Lage, como patrono do Logístico de Minas.\n\nSeu pioneirismo na implementação de infraestrutura logística e transporte o tornou um ícone na história do Brasil. Em 1950, o Pelotão de Recuperação de Automóvel se transforma em 4ª Companhia Leve de Manutenção. As operações de apoio logístico operacional funcionavam nas duas companhias autônomas até o início dos anos 70, quando o Exército Brasileiro implantou batalhões logísticos às suas fileiras.\n\nAssim, em 1972, nasce o 17º Batalhão Logístico, fruto da excelência constante e convergente caminhada entre as duas unidades logísticas de Minas Gerais. Durante 12 anos, o batalhão teve sedes em Santos Dumont e Juiz de Fora, até 1984, quando houve a permuta com o 4º Esquadrão de Cavalaria Mecanizado, localizado no bairro de Mariano Procópio. O Logístico de Minas carrega um legado substancial das organizações militares presentes em sua árvore genealógica.\n\nSua missão é constantemente superada pela busca de excelência, refletida em seu lema:\nApoiar sempre, cada vez melhor!',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Lexend Deca',
+                                              color: Colors.black,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
                                     ),
                                   ],
                                 ),
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                    child: Image.asset(
-                                      'assets/images/Comandantes_2025.png',
-                                      width: 404.0,
-                                      height: 768.0,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ],
                               ),
                             ],
                           ),
