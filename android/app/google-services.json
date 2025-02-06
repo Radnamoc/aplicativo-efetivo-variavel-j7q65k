@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "62103573441",
+    "firebase_url": "https://aplicativo-efetivo-variavel-default-rtdb.firebaseio.com",
+    "project_id": "aplicativo-efetivo-variavel",
+    "storage_bucket": "aplicativo-efetivo-variavel.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62103573441:android:d200616d2941e2c3fe1540",
+        "android_client_info": {
+          "package_name": "gsbloglmth.appspot.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-noVggbgrY51hxZK2DG3vmZoLX6WcSdY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
